@@ -1,6 +1,6 @@
 from tkinter import*
 root=Tk()
-root.geometry("400x400")
+root.geometry("600x400")
 root.minsize(400,400)
 root.maxsize(600,600)
 
@@ -22,6 +22,8 @@ def getvals():
 
 
 root.title("XYZ Dance Classes")
+Label(root,text="Fill the dance registration form:",font="Serpia 18 bold",fg="red").grid(row=0,column=1)
+Label(root,text="").grid(row=1,column=1)
 
 name=Label(root,text="Name")
 age=Label(root,text="Age")
@@ -29,11 +31,11 @@ address=Label(root,text="Address")
 contact_number=Label(root,text="Contact Number")
 email_id=Label(root,text="Email ID")
 
-name.grid()
-age.grid(row=1)
-address.grid(row=2)
-contact_number.grid(row=3)
-email_id.grid(row=4)
+name.grid(row=2)
+age.grid(row=3)
+address.grid(row=4)
+contact_number.grid(row=5)
+email_id.grid(row=6)
 
 nameval=StringVar()
 ageval=IntVar()
@@ -42,15 +44,15 @@ contactval=IntVar()
 emailval=StringVar()
 
 nameentry=Entry(root,textvariable=nameval)
-nameentry.grid(row=0,column=1)
+nameentry.grid(row=2,column=1)
 ageentry=Entry(root,textvariable=ageval)
-ageentry.grid(row=1,column=1)
+ageentry.grid(row=3,column=1)
 addressentry=Entry(root,textvariable=addressval)
-addressentry.grid(row=2,column=1)
+addressentry.grid(row=4,column=1)
 contactentry=Entry(root,textvariable=contactval)
-contactentry.grid(row=3,column=1)
+contactentry.grid(row=5,column=1)
 emailentry=Entry(root,textvariable=emailval)
-emailentry.grid(row=4,column=1)
-
-Button(text="Submit",command=getvals).grid()
+emailentry.grid(row=6,column=1)
+Label(root,text="").grid(row=7,column=1)
+Button(text="Submit",command=getvals).grid(column=1)
 root.mainloop()
