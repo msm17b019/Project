@@ -46,5 +46,6 @@ def decodeMorse(morse_code):
     f=len(z)-1
     del z[f]
     final="".join(z)
-    print(final)
+    real=final.strip(' ')
+    print(real)
 decodeMorse('.   .')
