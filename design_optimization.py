@@ -287,11 +287,11 @@ def minz(table):
     return val
 
 if __name__ == "__main__":
-    m = gen_matrix(2,2)
-    constrain(m,'2,-1,G,10')   #arguments are table and equation
-    constrain(m,'1,1,L,20')
-    obj(m,'5,10,0')     
-    print(maxz(m))     
+    # m = gen_matrix(2,2)
+    # constrain(m,'2,-1,G,10')   #arguments are table and equation
+    # constrain(m,'1,1,L,20')
+    # obj(m,'5,10,0')     
+    # print(maxz(m))     
     m = gen_matrix(2,4)
     constrain(m,'2,5,G,30')
     constrain(m,'-3,5,G,5')
