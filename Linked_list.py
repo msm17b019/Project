@@ -23,9 +23,18 @@ class LinkedList:
         itr.next=Node(data,None)
 
     def insert_values(self,data_list):
-        self.head=None
+        if self.head is None:
+            for data in data_list:
+                self.insert_at_end(data)
+            return
+        
+        itr=self.head
+        while itr.next:
+            itr=itr.next
+
         for data in data_list:
             self.insert_at_end(data)
+        return
 
     def remove_at(self,index):
         if index<0 or index>=self.get_length():
@@ -62,6 +71,37 @@ class LinkedList:
             itr=itr.next
             count+=1
 
+    def insert_after_value(self,data_after,data_to_insert):
+        if self.head is None:
+            return None
+
+        if self.head.data==data_after:
+            self.head.next=Node(data_to_insert,self.head.next)
+            return
+
+        itr=self.head
+        while itr:
+            if itr.data==data_after:
+                itr.next=Node(data_to_insert,itr.next)
+                break
+
+            itr=itr.next
+
+    def remove_by_values(self,data_to_be_removed):
+        if self.head is None:
+            return
+        
+        if self.head.data==data_to_be_removed:
+            self.head=self.head.next
+            return
+
+        itr=self.head
+        while itr.next:
+            if itr.next.data==data_to_be_removed:
+                itr.next=itr.next.next
+                break
+            itr=itr.next
+
     def get_length(self):
         count=0
         itr=self.head
@@ -85,11 +125,14 @@ class LinkedList:
 
 if __name__=='__main__':
     ll=LinkedList()
-    # ll.insert_values([3,6,4,76])
-    # ll.insert_at_beginning(5)
-    # ll.insert_at_beginning(89)
-    # ll.insert_at_end(7)
-    # ll.insert_at_end(6)
-    # ll.insert_at(3,20)
-    # ll.remove_at(5)
+    ll.insert_values([3,6,4,76])
+    ll.insert_at_beginning(5)
+    ll.insert_at_beginning(89)
+    ll.insert_at_end(7)
+    ll.insert_at_end(6)
+    ll.insert_at(3,20)
+    ll.remove_at(5)
+    ll.insert_after_value(7,99)
+    ll.remove_by_values(3)
     ll.print()
+    print(ll.get_length())
