@@ -28,10 +28,6 @@ class LinkedList:
                 self.insert_at_end(data)
             return
         
-        itr=self.head
-        while itr.next:
-            itr=itr.next
-
         for data in data_list:
             self.insert_at_end(data)
         return
@@ -125,14 +121,11 @@ class LinkedList:
 
 if __name__=='__main__':
     ll=LinkedList()
-    ll.insert_values([3,6,4,76])
+    ll.insert_values([3,67,45])
     ll.insert_at_beginning(5)
     ll.insert_at_beginning(89)
-    ll.insert_at_end(7)
-    ll.insert_at_end(6)
-    ll.insert_at(3,20)
-    ll.remove_at(5)
-    ll.insert_after_value(7,99)
-    ll.remove_by_values(3)
+    ll.insert_at_end(20)
+    ll.remove_at(3)
+    
     ll.print()
     print(ll.get_length())
