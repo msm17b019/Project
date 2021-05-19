@@ -23,14 +23,8 @@ class LinkedList:
         itr.next=Node(data,None)
 
     def insert_values(self,data_list):
-        if self.head is None:
-            for data in data_list:
-                self.insert_at_end(data)
-            return
-        
         for data in data_list:
             self.insert_at_end(data)
-        return
 
     def remove_at(self,index):
         if index<0 or index>=self.get_length():
