@@ -13,7 +13,7 @@ class HashMap:
         h=self.get_hash(key)
         found=False
         for idx,item in enumerate(self.arr[h]):
-            if len(item)>=2 and item[0]==key:
+            if len(item)==2 and item[0]==key:
                 self.arr[h][idx]=(key,value)
                 found=True
                 break
