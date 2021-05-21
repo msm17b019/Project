@@ -12,13 +12,13 @@ class HashMap:
     def __setitem__(self,key,value):
         h=self.get_hash(key)
         found=False
-        for idx,item in enumerate(self.arr[h]):
+        for idx,item in enumerate(self.arr[h]):  #To update the value of key in list if key already exists
             if len(item)==2 and item[0]==key:
                 self.arr[h][idx]=(key,value)
                 found=True
                 break
 
-        if not found:
+        if not found:                            #Add value of key if key don't exist in list.
             self.arr[h].append((key,value))
 
     def __getitem__(self,key):
