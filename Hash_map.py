@@ -11,7 +11,7 @@ class HashMap:
 
     def __setitem__(self,key,value):
         h=self.get_hash(key)
-        found=0
+        found=False
         for idx,item in enumerate(self.arr[h]):
             if len(item)==2 and item[0]==key:
                 self.arr[h][idx]=(key,value)
