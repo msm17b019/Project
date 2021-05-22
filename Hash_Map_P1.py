@@ -38,12 +38,15 @@ class HashMap:
             total+=self.__getitem__('Jan'+' '+str(i))
         print(total/days)
 
-    def get_max(self,days_from_start):
+    def get_max(self,days_from_start):   
         l=[]
         for i in range(days_from_start):
             l.append(self.__getitem__('Jan'+' '+str(i+1)))
 
         print(max(l))
+
+    def get_temp_on_date(self,date):    # Temp on particular date
+        print(self.__getitem__(date))
 
 if __name__=='__main__':
     t=HashMap()
@@ -54,5 +57,10 @@ if __name__=='__main__':
                 a,b=map(str,item.rstrip('\n').split(','))
                 b=int(b)
                 t[a]=b
+    print(t.arr)
     t.get_avg(7)
     t.get_max(10)
+    t.get_temp_on_date('Jan 4')
+    t.get_temp_on_date('Jan 9')
+    # print(t['Jan 4'])
+    # print(t['Jan 9'])
